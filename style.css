@@ -4,7 +4,7 @@
   --bittersweet: #f07167;
 }
 
-div {
+div:not(.logo) {
   border: 1px solid black;
 }
 
@@ -20,20 +20,49 @@ body {
 .container {
   height: 100%;
   display: grid;
-  grid-template: 17% 83% / 20% 80%;
+  grid-template: 17% 83% / 1fr 5fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main-content";
 }
 
+/* ----- HEADER ----- */
 .header {
   grid-area: header;
 }
-
+/* ----- SIDEBAR ----- */
 .sidebar {
   grid-area: sidebar;
+
+  display: grid;
+  justify-items: start;
+  grid-template-rows: 5% 95%;
+  grid-template-areas: "logo" "nav";
 }
 
+.logo {
+  grid-area: logo;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+
+.nav {
+  grid-area: nav;
+  margin-bottom: 10px;
+}
+
+.sidebar-item {
+  font-size: 1.2rem;
+  list-style-type: none;
+  margin: 0 0 10px 0.5rem;
+}
+
+/* Add space on sidebar between nav and settings */
+.sidebar-item:nth-child(6) {
+  margin-bottom: 50px;
+}
+
+/* ----- MAIN ----- */
 .main-content {
   grid-area: main-content;
   display: grid;
@@ -63,6 +92,8 @@ body {
   min-width: 300px;
   min-height: 150px;
 }
+
+/* ----- SIDE CONTENT ----- */
 .side-content {
   grid-area: side-content;
 }
