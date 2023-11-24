@@ -20,10 +20,10 @@ body {
 .container {
   height: 100%;
   display: grid;
-  grid-template: 1fr 4fr / 1fr 3fr 1fr;
+  grid-template: 1fr 4fr / 1fr 3fr;
   grid-template-areas:
-    "sidebar header header"
-    "sidebar main-content side-content";
+    "sidebar header"
+    "sidebar main-content";
 }
 
 .header {
@@ -36,8 +36,20 @@ body {
 
 .main-content {
   grid-area: main-content;
+  display: grid;
+  grid-template: 1fr 10fr / 2.5fr 1fr;
+  grid-template-areas:
+    "heading side-content"
+    "main-content-grid side-content";
 }
 
+.heading {
+  grid-area: heading;
+}
+
+.main-content-grid {
+  grid-area: main-content-grid;
+}
 .side-content {
   grid-area: side-content;
 }
