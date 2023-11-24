@@ -1,0 +1,43 @@
+::root {
+  --cerulean: #0081a7;
+  --lightyellow: #fdfcdc;
+  --bittersweet: #f07167;
+}
+
+div {
+  border: 1px solid black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template: 1fr 4fr / 1fr 3fr 1fr;
+  grid-template-areas:
+    "sidebar header header"
+    "sidebar main-content side-content";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main-content {
+  grid-area: main-content;
+}
+
+.side-content {
+  grid-area: side-content;
+}
