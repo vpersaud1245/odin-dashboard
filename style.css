@@ -73,7 +73,7 @@ body {
 
 /* ----- MAIN ----- */
 .main-content {
-  padding: 1rem;
+  padding: 1rem 1rem 3rem 1rem;
   grid-area: main-content;
   display: grid;
   grid-template: 0.7fr 10fr / 80% 1fr;
@@ -98,7 +98,7 @@ body {
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(150px, 0.5fr));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.7rem;
 }
 
