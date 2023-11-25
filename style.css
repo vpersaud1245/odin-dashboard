@@ -135,11 +135,26 @@ body {
 
 .announcement-box,
 .trending-box {
-  height: 50%;
-  width: 95%;
+  height: 45%;
+  width: auto;
   border: 1px solid black;
+  padding: 1rem;
+  overflow: hidden;
 }
 
 .announcement-box {
   margin-bottom: 5%;
+}
+
+.announcement-item {
+  height: 29%;
+  overflow: scroll;
+}
+
+.announcement-item > p {
+  font-size: 0.8rem;
+}
+
+hr {
+  margin: 0.5rem 0;
 }
