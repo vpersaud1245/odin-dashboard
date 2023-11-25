@@ -20,7 +20,7 @@ body {
 .container {
   height: 100%;
   display: grid;
-  grid-template: 17% 83% / 1fr 5fr;
+  grid-template: 17% 83% / fit-content(250px) 3fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main-content";
@@ -33,40 +33,51 @@ body {
 /* ----- SIDEBAR ----- */
 .sidebar {
   grid-area: sidebar;
-
-  display: grid;
-  justify-items: start;
-  grid-template-rows: 5% 95%;
-  grid-template-areas: "logo" "nav";
+  padding: 0.7rem;
 }
 
 .logo {
-  grid-area: logo;
-  font-size: 2rem;
-  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  margin: 0 0 20% 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  height: auto;
+  width: 17%;
 }
 
 .nav {
-  grid-area: nav;
   margin-bottom: 10px;
 }
 
 .sidebar-item {
   font-size: 1.2rem;
   list-style-type: none;
-  margin: 0 0 10px 0.5rem;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-icon {
+  height: auto;
+  width: 12%;
 }
 
 /* Add space on sidebar between nav and settings */
 .sidebar-item:nth-child(6) {
-  margin-bottom: 50px;
+  margin-bottom: 20%;
 }
 
 /* ----- MAIN ----- */
 .main-content {
   grid-area: main-content;
   display: grid;
-  grid-template: 1fr 10fr / 80% 1fr;
+  grid-template: 0.9fr 10fr / 80% 1fr;
   grid-template-areas:
     "heading side-content"
     "main-content-grid side-content";
@@ -74,6 +85,11 @@ body {
 
 .heading {
   grid-area: heading;
+  padding: 0 0 0 0.6rem;
+
+  font-size: 1.2rem;
+  align-self: end;
+  font-weight: bold;
 }
 
 .main-content-grid {
