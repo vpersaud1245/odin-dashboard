@@ -16,7 +16,7 @@ body {
 .container {
   height: 100%;
   display: grid;
-  grid-template: 17% 83% / fit-content(250px) 3fr;
+  grid-template: minmax(100px, 160px) 4fr / fit-content(250px) 3fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main-content";
@@ -25,8 +25,72 @@ body {
 /* ----- HEADER ----- */
 .header {
   grid-area: header;
+  padding: 1rem;
   border-bottom: 1px solid black;
+  display: grid;
+  grid-template: 1fr 1fr / 3fr 1fr;
+  grid-template-areas:
+    "search-bar alert-bar"
+    "welcome-message control-buttons";
 }
+
+.header > div {
+  height: auto;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.search-bar-container {
+  grid-area: search-bar;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-icon {
+  height: auto;
+  width: 2.5%;
+}
+
+.search-bar {
+  height: 80%;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.welcome-message {
+  grid-area: welcome-message;
+  min-height: 100%;
+}
+
+.alert-bar {
+  grid-area: alert-bar;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.alert-icon {
+  height: auto;
+  width: 8%;
+}
+
+.user-icon {
+  height: auto;
+  width: 15%;
+  border-radius: 50%;
+}
+
+.alert-bar > p {
+  font-weight: bold;
+}
+
+.control-buttons {
+  grid-area: control-buttons;
+}
+
 /* ----- SIDEBAR ----- */
 .sidebar {
   grid-area: sidebar;
@@ -93,7 +157,6 @@ body {
 
 .main-content-grid {
   grid-area: main-content-grid;
-  overflow: scroll;
   margin-right: 0.5rem;
 
   display: grid;
@@ -160,7 +223,7 @@ hr {
 }
 
 .trending-item {
-  height: 20%;
+  height: 25%;
   display: grid;
   grid-template: 1fr / 1fr 2fr;
   grid-template-areas: "icon text";
