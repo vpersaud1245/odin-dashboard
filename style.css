@@ -39,7 +39,7 @@ body {
 .search-bar-container {
   grid-area: search-bar;
   display: flex;
-  gap: 1rem;
+  gap: 0.4rem;
   align-items: center;
 }
 
@@ -124,7 +124,7 @@ button {
 /* ----- SIDEBAR ----- */
 .sidebar {
   grid-area: sidebar;
-  padding: 0.7rem;
+  padding: 1.2rem;
   border-right: 1px solid black;
 }
 
@@ -198,9 +198,28 @@ button {
 }
 
 .main-content-box {
-  background-color: #0081a7;
-  /* min-width: 300px;
-  min-height: 150px; */
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.main-content-box > h4 {
+  font-size: 1rem;
+}
+
+.project-buttons {
+  margin-top: 8%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7rem;
+}
+
+.project-icon {
+  width: 8%;
 }
 
 /* ----- SIDE CONTENT ----- */
