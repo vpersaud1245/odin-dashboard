@@ -160,7 +160,7 @@ hr {
 }
 
 .trending-item {
-  height: 25%;
+  height: 20%;
   display: grid;
   grid-template: 1fr / 1fr 2fr;
   grid-template-areas: "icon text";
@@ -171,6 +171,7 @@ hr {
   height: auto;
   width: 80%;
   border-radius: 50%;
+  align-self: center;
 }
 
 .trending-text {
