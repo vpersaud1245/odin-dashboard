@@ -7,6 +7,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 .container {
   height: 100%;
   display: grid;
-  grid-template: minmax(100px, 160px) 4fr / fit-content(250px) 3fr;
+  grid-template: 1fr 4fr / fit-content(290px) 3fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main-content";
@@ -25,19 +26,14 @@ body {
 /* ----- HEADER ----- */
 .header {
   grid-area: header;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 2rem;
   border-bottom: 1px solid black;
   display: grid;
-  grid-template: 1fr 1fr / 3fr 1fr;
+  gap: 1rem;
+  grid-template: 1fr 2fr / 2.6fr 1fr;
   grid-template-areas:
     "search-bar alert-bar"
     "welcome-message control-buttons";
-}
-
-.header > div {
-  height: auto;
-  width: 100%;
-  border: 1px solid black;
 }
 
 .search-bar-container {
@@ -53,15 +49,37 @@ body {
 }
 
 .search-bar {
-  height: 80%;
+  height: auto;
   width: 80%;
   border: 1px solid black;
   border-radius: 1rem;
+  padding: 0.4rem 1rem;
 }
 
 .welcome-message {
   grid-area: welcome-message;
   min-height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.welcome-name {
+  font-size: 1.2rem;
+}
+
+.welcome-icon {
+  width: 10%;
+  height: auto;
+  border-radius: 50%;
+  border: 0.5px solid black;
 }
 
 .alert-bar {
@@ -74,13 +92,14 @@ body {
 
 .alert-icon {
   height: auto;
-  width: 8%;
+  width: 7%;
 }
 
 .user-icon {
   height: auto;
   width: 15%;
   border-radius: 50%;
+  border: 0.5px solid black;
 }
 
 .alert-bar > p {
@@ -89,6 +108,17 @@ body {
 
 .control-buttons {
   grid-area: control-buttons;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+button {
+  border-radius: 25px;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
 }
 
 /* ----- SIDEBAR ----- */
@@ -104,11 +134,12 @@ body {
 
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .logo-icon {
   height: auto;
-  width: 17%;
+  width: 13%;
 }
 
 .nav {
@@ -122,12 +153,12 @@ body {
 
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 }
 
 .nav-icon {
   height: auto;
-  width: 12%;
+  width: 8%;
 }
 
 /* Add space on sidebar between communities and settings */
@@ -140,7 +171,7 @@ body {
   padding: 1rem 1rem 3rem 1rem;
   grid-area: main-content;
   display: grid;
-  grid-template: 0.7fr 10fr / 80% 1fr;
+  grid-template: 0.7fr 10fr / 3fr 1fr;
   grid-template-areas:
     "heading announcement-heading"
     "main-content-grid side-content";
@@ -160,8 +191,8 @@ body {
   margin-right: 0.5rem;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.7rem;
 }
 
@@ -235,6 +266,7 @@ hr {
   width: 80%;
   border-radius: 50%;
   align-self: center;
+  border: 0.5px solid black;
 }
 
 .trending-text {
