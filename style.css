@@ -212,9 +212,9 @@ button {
 }
 
 .project-buttons {
-  margin-top: 8%;
   display: flex;
   justify-content: flex-end;
+  margin-top: auto;
   gap: 0.7rem;
 }
 
